@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billion এআই টোকেন ফ্রিতে নিয়ে নিন প্রতি মাসে (Full Tutorial)</title>
+    <meta name="description" content="জানুন কীভাবে প্রতি মাসে ফ্রিতে বিলিয়ন এআই টোকেন ক্লেইম করবেন। সম্পূর্ণ নির্দেশাবলী এবং কমান্ড সহ ফুল টিউটোরিয়াল।">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-gradient: linear-gradient(135deg, #007bff, #0056b3);
+            --bg-color: #f8f9fa;
+            --text-color: #2d3748;
+            --card-bg: #ffffff;
+            --code-bg: #1e1e1e;
+        }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.75; 
+            color: var(--text-color); 
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: var(--bg-color); 
+        }
+        article {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            margin-top: 20px;
+        }
+        
+        /* Sleek Header & Title UI */
+        header { 
+            text-align: left; 
+            padding-bottom: 25px; 
+            border-bottom: 1px solid #e2e8f0; 
+            margin-bottom: 30px; 
+        }
+        h1 { 
+            color: #1a202c; 
+            font-size: 2.6em; 
+            font-weight: 800;
+            line-height: 1.3; 
+            margin-top: 0;
+            margin-bottom: 15px; 
+            letter-spacing: -0.5px;
+        }
+        .meta-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9em;
+            color: #718096;
+        }
+        .meta-author {
+            font-weight: 600;
+            color: #4a5568;
+        }
+        .meta-badge {
+            background: #edf2f7;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
+        /* Preview Image Styling */
+        .featured-image {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 { 
+            color: var(--primary-color); 
+            margin-top: 45px; 
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 25px;
+            background: var(--primary-gradient);
+            margin-right: 12px;
+            border-radius: 4px;
+        }
+        .intro { 
+            font-size: 1.15em; 
+            color: #4a5568; 
+            margin-bottom: 35px; 
+            background: #f0f7ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 4px solid var(--primary-color); 
+        }
+        
+        /* Code Block Styling */
+        .code-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        pre { 
+            background: var(--code-bg); 
+            color: #f8f8f2; 
+            padding: 22px; 
+            border-radius: 10px; 
+            overflow-x: auto; 
+            font-family: 'Fira Code', Consolas, 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover { 
+            background: rgba(255,255,255,0.3); 
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        /* Links & Lists */
+        .web-links { list-style: none; padding: 0; }
+        .web-links li { background: #f7fafc; padding: 14px 18px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .web-links strong { color: #4a5568; }
+        .web-links a { color: var(--primary-color); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        .web-links a:hover { color: #0056b3; text-decoration: underline; }
+        
+        .content-placeholder {
+            background: #fafafa;
+            border: 1px dashed #cbd5e0;
+            padding: 25px;
+            text-align: center;
+            color: #718096;
+            font-style: italic;
+            border-radius: 8px;
+        }
+
+        .takeaways { background: #fffbe6; border-left: 5px solid #ffe58f; padding: 25px; margin: 40px 0; border-radius: 0 10px 10px 0; }
+        .takeaways h3 { margin-top: 0; color: #d46b08; font-size: 1.25em; }
+        .takeaways ul { padding-left: 20px; }
+        .takeaways li { margin-bottom: 12px; }
+
+        .cta-box { background: #e7f3ff; border: 1px solid #b3d7ff; padding: 35px; border-radius: 12px; margin-top: 45px; text-align: center; }
+        .cta-box h3 { margin-top: 0; font-size: 1.4em; color: #1a202c; }
+        .btn { background: var(--primary-gradient); color: white; padding: 12px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,123,255,0.25); transition: transform 0.2s, box-shadow 0.2s; }
+        .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,123,255,0.35); }
+        
+        footer { text-align: center; font-size: 0.9em; color: #a0aec0; margin-top: 60px; padding-bottom: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+<article>
+    <header>
+        <h1>Billion এআই টোকেন ফ্রিতে নিয়ে নিন (Full Instructions/Tutorial)</h1>
+        <div class="meta-container">
+            <span class="meta-author">By Ahmed Raz</span>
+            <span>•</span>
+            <span class="meta-badge">5 Min Read</span>
+            <span>•</span>
+            <span>June 2026</span>
+            <span>Main Video Tutorial Here: <a href="https://youtu.be/_ly17_Bs5zA?si=3V6Ofo708Z9SUDWP" target="_blank">Watch Now</a></span>
+        </div>
+    </header>
+
+    <!-- Preview Image Positioned Before Intro -->
+    <img src="https://i.ytimg.com/vi/_ly17_Bs5zA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-c-cAIgJ6nqUmZsPbOJ93lKueSg" alt="Billion এআই টোকেন ফ্রিতে নিয়ে নিন প্রতি মাসে" class="featured-image">
+
+    <div class="intro">
+        এই টিউটোরিয়ালে, আমরা দেখাবো কীভাবে আপনি প্রতি মাসে ফ্রিতে বিলিয়ন এআই টোকেন ক্লেইম করতে পারেন। সম্পূর্ণ নির্দেশাবলী এবং কমান্ড সহ, আপনি সহজেই এই সুযোগটি কাজে লাগাতে পারবেন। চলুন শুরু করা যাক!
+    </div>
+
+    <h2>Needed Command</h2>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre id="command-block">git clone https://github.com/tashfeenahmed/freellmapi.git
+cd freellmapi
+npm install
+cp .env.example .env
+ENCRYPTION_KEY="$(node -e 'console.log(require("crypto").randomBytes(32).toString("hex"))')"
+printf "ENCRYPTION_KEY=%s\nPORT=3001\n" "$ENCRYPTION_KEY" > .env
+npm run dev</pre>
+    </div>
+
+    <h2>Used Websites</h2>
+    <ul class="web-links">
+        <li>
+            <span><strong>গিট ডাউনলোডঃ</strong></span>
+            <a href="https://freellmapi.co" target="_blank">https://freellmapi.co</a>
+        </li>
+        <li>
+            <span><strong>ফ্রিLLMAPI:</strong></span>
+            <a href="https://freellmapi.co" target="_blank">https://freellmapi.co</a>
+        </li>
+        <li>
+            <span><strong>গিট অফিসিয়াল ডাউনলোডঃ</strong></span>
+            <a href="https://git-scm.com/install/" target="_blank">https://git-scm.com/install</a>
+        </li>
+    </ul>
+
+    <h2>Heading 1</h2>
+    <div class="content-placeholder">
+        আপনার প্রথম ধাপের বিস্তারিত বিবরণ বা টিউটোরিয়াল প্যারাগ্রাফটি এখানে লিখুন।
+    </div>
+
+    <h2>Heading 2</h2>
+    <div class="content-placeholder">
+        আপনার দ্বিতীয় ধাপের বিস্তারিত বিবরণ বা টিউটোরিয়াল প্যারাগ্রাফটি এখানে লিখুন।
+    </div>
+
+    <h2>Heading 3</h2>
+    <div class="content-placeholder">
+        আপনার তৃতীয় ধাপের বিস্তারিত বিবরণ বা টিউটোরিয়াল প্যারাগ্রাফটি এখানে লিখুন।
+    </div>
+
+    <div class="takeaways">
+        <h3>✅ Key Takeaways</h3>
+        <ul>
+            <li>Work in 90-minute blocks for peak focus.</li>
+            <li>Do your hardest task first thing in the morning.</li>
+            <li>Stop "snacking" on notifications; batch your emails instead.</li>
+            <li>Prioritize rest to maintain long-term output.</li>
+        </ul>
+    </div>
+
+    <div class="cta-box">
+        <h3>Ready to Transform Your Workflow?</h3>
+        <p>Join 5,000+ others getting our weekly productivity hacks delivered straight to their inbox.</p>
+        <a href="#" class="btn">Join the Newsletter</a>
+    </div>
+
+</article>
+
+<footer>
+    <p>&copy; 2026 Ahmed Raz. All rights reserved.</p>
+</footer>
+
+<script>
+function copyCode(button) {
+    const codeText = document.getElementById('command-block').innerText;
+    navigator.clipboard.writeText(codeText).then(() => {
+        button.innerText = 'Copied!';
+        button.style.background = '#28a745';
+        setTimeout(() => {
+            button.innerText = 'Copy';
+            button.style.background = 'rgba(255,255,255,0.15)';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
+</script>
+
+</body>
+</html>
